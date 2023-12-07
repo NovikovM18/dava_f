@@ -1,79 +1,89 @@
 <template>
-  <div class="speed">
-    <span>Скорость</span>
-    <input type="number" v-model="V">
+  <div class="speed page">
+    <h2>Скорость и ускорение</h2>
+
+    <label>
+      <span>Скорость</span> 
+      <input type="number" v-model="V">
+    </label>
     
-    <span>Расстояние</span>
-    <input type="number" v-model="S">
+    <label>
+      <span>Расстояние</span> 
+      <input type="number" v-model="S">
+    </label>
     
-    <span>Время</span>
-    <input type="number" v-model="T">
-    
+    <label>
+      <span>Время</span> 
+      <input type="number" v-model="T">
+    </label>
     
     <button @click="calculate">Посчитать</button>
     
-    <p>Решение: {{ result || 'нет результата пока' }}</p>
-    
-    <span>Начальная скорость</span>
-    <input type="number" v-model="V0">
-    
-    <span>Скорость в моменте</span>
-    <input type="number" v-model="V1">
+    <p>Решение: {{ result || 'нет результата' }}</p>
 
-    <span>delta Времени</span>
-    <input type="number" v-model="dT">
+    <label>
+      <span>delta Скорости</span> 
+      <input type="number" v-model="dV">
+    </label>
     
-    <span>Ускорение</span>
-    <input type="number" v-model="a">
+    <label>
+      <span>delta Времени</span> 
+      <input type="number" v-model="dT">
+    </label>
+    
+    <label>
+      <span>Ускорение</span> 
+      <input type="number" v-model="a">
+    </label>
     
     <button @click="calculateForcage">Посчитать</button>
     
-    <p>Решение: {{ resultF || 'нет результата пока' }}</p>
+    <p>Решение: {{ resultF || 'нет результата' }}</p>
 
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+  import { ref } from 'vue';
 
-const V = ref(null);
-const V0 = ref(null);
-const V1 = ref(null);
-const S = ref(null);
-const T = ref(null);
-const dT = ref(null);
-const a = ref(null);
+  const V = ref(null);
+  const dV = ref(null);
+  const S = ref(null);
+  const T = ref(null);
+  const dT = ref(null);
+  const a = ref(null);
 
-const result = ref(null);
-const resultF = ref(null);
+  const result = ref(null);
+  const resultF = ref(null);
 
-function calculate() {
-  if (!V.value && S.value && T.value) {
-    result.value = (S.value / T.value).toFixed(2);
-  } else if (V.value && !S.value && T.value) {
-    result.value = (V.value * T.value).toFixed(2);
-  } else if (V.value && S.value && !T.value) {
-    result.value = (S.value / V.value).toFixed(2);
-  } else {
-    result.value = 'Некорректные данные';
-  };
-}
+  function calculate() {
+    if (!V.value && S.value && T.value) {
+      result.value = (S.value / T.value).toFixed(2);
+    } else if (V.value && !S.value && T.value) {
+      result.value = (V.value * T.value).toFixed(2);
+    } else if (V.value && S.value && !T.value) {
+      result.value = (S.value / V.value).toFixed(2);
+    } else {
+      result.value = 'Некорректные данные';
+    };
+  }
 
-function calculateForcage() {
-  resultF.value = ((V1.value - V0.value) / dT.value)
-}
-
-
+  function calculateForcage() {
+    if (!dV.value && S2.value && dT.value) {
+      resultF.value = (S2.value / dT.value).toFixed(2);
+    } else if (dV.value && !S2.value && dT.value) {
+      resultF.value = (dV.value * dT.value).toFixed(2);
+    } else if (dV.value && S2.value && !dT.value) {
+      resultF.value = (S2.value / dV.value).toFixed(2);
+    } else {
+      resultF.value = 'Некорректные данные';
+    };
+  }
 
 
 </script>
 
 <style lang="scss" scoped>
-  .speed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
+
 
 </style>
