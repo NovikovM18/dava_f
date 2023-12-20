@@ -7,7 +7,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/dava_f/',
-      redirect: '/dava_f/si',
+      // redirect: '/dava_f/si',
       component: Main, 
       children: [
         { path: '/dava_f/speed', component: Speed },
