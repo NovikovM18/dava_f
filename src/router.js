@@ -4,7 +4,8 @@ import Speed from '../src/views/Speed.vue'
 import Si from '../src/views/Si.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  // history: createWebHistory(),
+  mode: 'hash',
   routes: [
     { path: '/dava_f/',
       // redirect: '/dava_f/si',
@@ -14,7 +15,6 @@ const router = createRouter({
         { path: '/dava_f/si', component: Si },
       ]
     },
-    { path: '/:pathMatch(.*)*', component: Main },
   ]
 })
 
