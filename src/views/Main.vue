@@ -1,8 +1,8 @@
 <template>
   <div id="main">
     <div class="nav">
-      <router-link to="/dava_f/si">Конвертер Si</router-link>
-      <router-link to="/dava_f/speed">Скорость</router-link>
+      <router-link to="si">Конвертер Si</router-link>
+      <router-link to="speed">Скорость</router-link>
     </div>
 
     <h1>Давына физика</h1>

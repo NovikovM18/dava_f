@@ -5,14 +5,14 @@ import Si from '../src/views/Si.vue'
 
 const router = createRouter({
   history: createWebHistory(),
-  mode: 'history',
+  // mode: 'history',
   routes: [
     { path: '/dava_f/',
       // redirect: '/dava_f/si',
       component: Main, 
       children: [
-        { path: '/dava_f/speed', component: Speed },
-        { path: '/dava_f/si', component: Si },
+        { path: 'speed', component: Speed },
+        { path: 'si', component: Si },
       ]
     },
   ]
