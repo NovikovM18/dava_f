@@ -5,7 +5,7 @@ import Si from '../src/views/Si.vue'
 
 const router = createRouter({
   history: createWebHistory(),
-  mode: 'hash',
+  mode: 'history',
   routes: [
     { path: '/dava_f/',
       // redirect: '/dava_f/si',
