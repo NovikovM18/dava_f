@@ -14,6 +14,7 @@ const router = createRouter({
         { path: '/dava_f/si', component: Si },
       ]
     },
+    { path: '/:pathMatch(.*)*', component: Main },
   ]
 })
 
