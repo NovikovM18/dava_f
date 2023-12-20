@@ -4,7 +4,7 @@ import Speed from '../src/views/Speed.vue'
 import Si from '../src/views/Si.vue'
 
 const router = createRouter({
-  // history: createWebHistory(),
+  history: createWebHistory(),
   mode: 'hash',
   routes: [
     { path: '/dava_f/',
